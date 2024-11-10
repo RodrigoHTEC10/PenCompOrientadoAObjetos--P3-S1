@@ -50,6 +50,8 @@ The main program that generates an executable (.exe) file is called ProyectPhysi
 This program is divided into menus that guide the user inside the different classes and solutions they may be looking for through switches, following the specifications of each class previously explained.
 Inside these menus the user must type a number between the limits of the menu and follow any specification typed by the program until finally obtain the result to their problem based on their input data.
 
+A 5th option was added to the Main menu which helps the user to check the working of all the functions with predetermined established data.
+
 
 ## Considerations: Units to Use
 The units accepted for this program must follow the next conventions in order to receive a correct result.
