@@ -8,22 +8,45 @@ This program help the user solve physics ecuations looking for specific values b
 These classes and values they help the user obtain are:
 
 
+
 ## Classes
+
+The UML diagram of the relationship between the proyect's classes can be appreciated below:
+
+<img src="https://github.com/user-attachments/assets/bb8e6bc0-5a53-4dc5-bf85-fd954e60e282" style="width:70%; height:auto;">
+
+
+### - **Kinematics** ("Kinematics.h")
+
+
+Parent abstract class that constains all the attributes of Horizontal and Vertical Kinematics as well as their common formulas to obtain displacement in x and y, initial velocity, final velocity, and time; excluding acceleration.
+
+The similarity between their respective formulas can be found in the images below.
+
+![Kinematics](https://github.com/user-attachments/assets/d7ab2d97-0763-4681-aaa6-6ada724b9249)
+
+
+
 ### - **Horizontal Kinematics** ("HorizontalCinematic.h")
 
 
-Using the following formulas and isolating the values to obtain, there are a total of 4 ways of obtain each value (displacement in x, initial velocity, final velocity, acceleration, and time) , each one with the abscense of another, therefore each formula uses only three values entered by the user.
+Class that focuses on obtaining displacement in x and y, initial velocity, final velocity, and time in the absence of acceleration, as well as acceleration using the five formulas of horizontal kinematics and the inheritance from Kinematics.h.
 
 <img src="https://study.com/cimages/videopreview/wceuhfpfz2.jpg" width=50% height=50%>
 
 The value that the user desires to obtain and the value the user does not have is specified by him/her in the menus.
 
+
+<img src="https://github.com/user-attachments/assets/47e30ae0-1691-4f9d-b4c2-0ba98602f151" style="width:30%; height:auto;">
+
+
 ### - **Vertical Kinematics** ("VerticalCinematic.h")
 
 
-Similarly to the class Horizontal Kinematics, using inheritance due to the similarity between their formulas, the user who desires to use this class will specify the value its looking for as well as the value he does not have through menus. Following this, him/her will enter the initial data of the remaining variables to receive the result based on the function that ended up using.
+This class uses inheritance from Kinematics.h keeping only its constructors due to the acceleration that will remain constant as the value of gravity acceleration 9.81, therefore entering it as a fixed parameter inside the constructor of Kinematics.
 
-Differently to the Horizontal Kinematics class, the acceleration will remain constant as the value of gravity acceleration 9.81, therefore there are a total of 3 ways to obtain the remaining four values participant in Kinematics (Displacement in y, initial velocity, final velocity, and time).
+
+<img src="https://github.com/user-attachments/assets/d4fa657c-0ab3-40f2-8bcd-31bc26bd2a1e" style="width:30%; height:auto;">
 
 
 ### - **Medium Velocity and Medium Acceleration** ("MediumVAndA.h")
@@ -36,12 +59,26 @@ Simple class where the user can choose to obtain the medium velocity of one disp
 
 Both the velocity and acceleration are divided into Y and X axis due to their posible vectorial influence.
 
+![MEDIUMA](https://github.com/user-attachments/assets/b65e78de-3790-4fe9-bb24-76833bed78a3)
+
+
+
+### - **Position** ("Position.h")
+
+Class responsible for holding position objects that contain an element in the "x" axis as well as the "y" axis; which are used to calculate Medium Velocity and Acceleration in their independent axis.
+
+
+<img src="https://github.com/user-attachments/assets/5f62f369-5844-437d-ac40-49d5ae6e8a5a" style="width:30%; height:auto;">
+
 
 ### - **Parabolic Shot** ("ParabolicShot.h")
 
 Through the present class the user will enter the inivial velocity and angle at which a proyectile was shot and can be able to know a specific position in the X and Y axis at a specific time, velocity in the Y axis at a specific time, maximum values of height and range of the parabola as well as the moments the proyectile arrived at these points. All this functionality based on the following formulas:
 
 <img src="https://physicsqanda.com/wp-content/uploads/2023/01/SmartSelect_20230119_111554_Samsung-Notes-1024x641.jpg" width=50% height=50%>
+
+
+![ParabolicShot](https://github.com/user-attachments/assets/eb187072-05cf-4a80-a78d-29f6ca140c2e)
 
 
 ## ProyectPhysics.cpp
