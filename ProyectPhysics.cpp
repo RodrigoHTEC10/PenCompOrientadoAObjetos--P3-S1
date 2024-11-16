@@ -2,10 +2,10 @@
 
 Author: Rodrigo Alejandro Hurtado Cortés - A01713854
 Title: Proyect - Physics Problem Solver
-Date last modification: November 9th, 2024.
+Date last modification: November 14th, 2024.
 
-Description: This proyect consist of four different classes integrated with formulas that help
-solve different physics problems related to:
+Description: This proyect consist of six different classes integrated with formulas that help
+solve different physics problems; however only four of these are integrated in the main() function:
 
     1. Horizontal Cinematic.
     2. Vertical Cinematic.
@@ -171,8 +171,8 @@ int main(){
                         cout <<"Enter the time: " <<endl;
                         cin >> t;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(0,vi,0,a,t);
-                        double final = casoX1.getDisplacementNoVf();
+                        HorizontalKinematics casoX1 = HorizontalKinematics(0,vi,0,a,t);
+                        double final = casoX1.getDisplacementNo("finalVelocity");
                         cout <<"Your displacement is: "<< final <<endl;
 
                     }break;
@@ -190,8 +190,8 @@ int main(){
                         cout <<"Enter the time: " <<endl;
                         cin >> t;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(0,0,vf,a,t);
-                        double final = casoX1.getDisplacementNoVi();
+                        HorizontalKinematics casoX1 = HorizontalKinematics(0,0,vf,a,t);
+                        double final = casoX1.getDisplacementNo("initialVelocity");
                         cout <<"Your displacement is: "<< final <<endl;
 
                     }break;
@@ -209,7 +209,7 @@ int main(){
                         cout <<"Enter the time: " <<endl;
                         cin >> t;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(0.0,vi,vf,0.0,t);
+                        HorizontalKinematics casoX1 = HorizontalKinematics(0.0,vi,vf,0.0,t);
                         double final = casoX1.getDisplacementNoA();
                         cout <<"Your displacement is: "<< final <<endl;
 
@@ -228,8 +228,8 @@ int main(){
                         cout <<"Enter the acceleration: " <<endl;
                         cin >> a;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(0.0,vi,vf,a,0.0);
-                        double final = casoX1.getDisplacementNoT();
+                        HorizontalKinematics casoX1 = HorizontalKinematics(0.0,vi,vf,a,0.0);
+                        double final = casoX1.getDisplacementNo("time");
                         cout <<"Your displacement is: "<< final <<endl;
 
                     }break;
@@ -258,8 +258,8 @@ int main(){
                         cout <<"Enter the time: " <<endl;
                         cin >> t;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(0.0,vi,0.0,a,t);
-                        double final = casoX1.getFinalVelocityNoX();
+                        HorizontalKinematics casoX1 = HorizontalKinematics(0.0,vi,0.0,a,t);
+                        double final = casoX1.getFinalVelocityNo("displacement");
                         cout <<"Your final velocity is: "<< final <<endl;
 
                     }break;
@@ -277,8 +277,8 @@ int main(){
                         cout <<"Enter the time: " <<endl;
                         cin >> t;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(x,0.0,0.0,a,t);
-                        double final = casoX1.getFinalVelocityNoVi();
+                        HorizontalKinematics casoX1 = HorizontalKinematics(x,0.0,0.0,a,t);
+                        double final = casoX1.getFinalVelocityNo("initialVelocity");
                         cout <<"Your final velocity is: "<< final <<endl;
 
                     }break;
@@ -296,7 +296,7 @@ int main(){
                         cout <<"Enter the time: " <<endl;
                         cin >> t;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(x,vi,0.0,0.0,t);
+                        HorizontalKinematics casoX1 = HorizontalKinematics(x,vi,0.0,0.0,t);
                         double final = casoX1.getFinalVelocityNoA();
                         cout <<"Your final velocity is: "<< final <<endl;
 
@@ -315,8 +315,8 @@ int main(){
                         cout <<"Enter the acceleration: " <<endl;
                         cin >> a;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(x,vi,0.0,a,0.0);
-                        double final = casoX1.getFinalVelocityNoT();
+                        HorizontalKinematics casoX1 = HorizontalKinematics(x,vi,0.0,a,0.0);
+                        double final = casoX1.getFinalVelocityNo("time");
                         cout <<"Your final velocity is: "<< final <<endl;
 
                     }break;
@@ -345,8 +345,8 @@ int main(){
                         cout <<"Enter the time: " <<endl;
                         cin >> t;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(0.0,0.0,vf,a,t);
-                        double final = casoX1.getInitialVelocityNoX();
+                        HorizontalKinematics casoX1 = HorizontalKinematics(0.0,0.0,vf,a,t);
+                        double final = casoX1.getInitialVelocityNo("displacement");
                         cout <<"Your initial velocity is: "<< final <<endl;
 
                     }break;
@@ -364,8 +364,8 @@ int main(){
                         cout <<"Enter the time: " <<endl;
                         cin >> t;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(x,0.0,0.0,a,t);
-                        double final = casoX1.getInitialVelocityNoVf();
+                        HorizontalKinematics casoX1 = HorizontalKinematics(x,0.0,0.0,a,t);
+                        double final = casoX1.getInitialVelocityNo("finalVelocity");
                         cout <<"Your initial velocity is: "<< final <<endl;
 
                     }break;
@@ -383,7 +383,7 @@ int main(){
                         cout <<"Enter the time: " <<endl;
                         cin >> t;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(x,0.0,vf,0.0,t);
+                        HorizontalKinematics casoX1 = HorizontalKinematics(x,0.0,vf,0.0,t);
                         double final = casoX1.getInitialVelocityNoA();
                         cout <<"Your initial velocity is: "<< final <<endl;
 
@@ -402,8 +402,8 @@ int main(){
                         cout <<"Enter the acceleration: " <<endl;
                         cin >> a;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(x,0.0,vf,a,0.0);
-                        double final = casoX1.getInitialVelocityNoT();
+                        HorizontalKinematics casoX1 = HorizontalKinematics(x,0.0,vf,a,0.0);
+                        double final = casoX1.getInitialVelocityNo("time");
                         cout <<"Your initial velocity is: "<< final <<endl;
 
                     }break;
@@ -431,8 +431,8 @@ int main(){
                         cout <<"Enter the time: " <<endl;
                         cin >> t;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(0.0,vi,vf,0.0,t);
-                        double final = casoX1.getAccelerationNoX();
+                        HorizontalKinematics casoX1 = HorizontalKinematics(0.0,vi,vf,0.0,t);
+                        double final = casoX1.getAccelerationNo("displacement");
                         cout <<"Your acceleration is: "<< final <<endl;
 
                     }break;
@@ -450,8 +450,8 @@ int main(){
                         cout <<"Enter the time: " <<endl;
                         cin >> t;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(x,vi,0.0,0.0,t);
-                        double final = casoX1.getAccelerationNoVf();
+                        HorizontalKinematics casoX1 = HorizontalKinematics(x,vi,0.0,0.0,t);
+                        double final = casoX1.getAccelerationNo("finalVelocity");
                         cout <<"Your acceleration is: "<< final <<endl;
 
                     }break;
@@ -469,8 +469,8 @@ int main(){
                         cout <<"Enter the time: " <<endl;
                         cin >> t;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(x,0.0,vf,0.0,t);
-                        double final = casoX1.getAccelerationNoVi();
+                        HorizontalKinematics casoX1 = HorizontalKinematics(x,0.0,vf,0.0,t);
+                        double final = casoX1.getAccelerationNo("initialVelocity");
                         cout <<"Your acceleration is: "<< final <<endl;
 
                     }break;
@@ -488,8 +488,8 @@ int main(){
                         cout <<"Enter the initial velocity: " <<endl;
                         cin >> vi;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(x,vi,vf,0.0,0.0);
-                        double final = casoX1.getAccelerationNoT();
+                        HorizontalKinematics casoX1 = HorizontalKinematics(x,vi,vf,0.0,0.0);
+                        double final = casoX1.getAccelerationNo("time");
                         cout <<"Your acceleration is: "<< final <<endl;
 
                     }break;
@@ -517,8 +517,8 @@ int main(){
                         cout <<"Enter the acceleration: " <<endl;
                         cin >> a;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(0.0,vi,vf,a,0.0);
-                        double final = casoX1.getTimeNoX();
+                        HorizontalKinematics casoX1 = HorizontalKinematics(0.0,vi,vf,a,0.0);
+                        double final = casoX1.getTimeNo("displacement");
                         cout <<"Your time is: "<< final <<endl;
 
                     }break;
@@ -536,8 +536,8 @@ int main(){
                         cout <<"Enter the acceleration: " <<endl;
                         cin >> a;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(x,vi,0.0,a,0.0);
-                        double final = casoX1.getTimeNoVf();
+                        HorizontalKinematics casoX1 = HorizontalKinematics(x,vi,0.0,a,0.0);
+                        double final = casoX1.getTimeNo("finalVelocity");
                         cout <<"Your time is: "<< final <<endl;
 
                     }break;
@@ -555,8 +555,8 @@ int main(){
                         cout <<"Enter the acceleration: " <<endl;
                         cin >> a;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(x,0.0,vf,a,0.0);
-                        double final = casoX1.getTimeNoVi();
+                        HorizontalKinematics casoX1 = HorizontalKinematics(x,0.0,vf,a,0.0);
+                        double final = casoX1.getTimeNo("initialVelocity");
                         cout <<"Your time is: "<< final <<endl;
 
                     }break;
@@ -574,7 +574,7 @@ int main(){
                         cout <<"Enter the initial velocity: " <<endl;
                         cin >> vi;
 
-                        HorizontalCinematic casoX1 = HorizontalCinematic(x,vi,vf,0.0,0.0);
+                        HorizontalKinematics casoX1 = HorizontalKinematics(x,vi,vf,0.0,0.0);
                         double final = casoX1.getTimeNoA();
                         cout <<"Your time is: "<< final <<endl;
 
@@ -621,8 +621,8 @@ int main(){
                         cout <<"Enter the time: " <<endl;
                         cin >> t;
 
-                        VerticalCinematic Case1 = VerticalCinematic(0.0,vi,0.0,t);
-                        double result = Case1.getDisplacementYNoVf();
+                        VerticalKinematics Case1 = VerticalKinematics(0.0,vi,0.0,t);
+                        double result = Case1.getDisplacementNo("finalVelocity");
                         cout <<"Your displacement is: "<< result <<endl;
 
 
@@ -638,8 +638,8 @@ int main(){
                         cout <<"Enter the time: " <<endl;
                         cin >> t;
 
-                        VerticalCinematic Case1 = VerticalCinematic(0.0,0.0,vf,t);
-                        double result = Case1.getDisplacementYNoVi();
+                        VerticalKinematics Case1 = VerticalKinematics(0.0,0.0,vf,t);
+                        double result = Case1.getDisplacementNo("initialVelocity");
                         cout <<"Your displacement is: "<< result <<endl;
 
 
@@ -655,8 +655,8 @@ int main(){
                         cout <<"Enter the final velocity: " <<endl;
                         cin >> vf;
 
-                        VerticalCinematic Case1 = VerticalCinematic(0.0,vi,vf,0.0);
-                        double result = Case1.getDisplacementYNoT();
+                        VerticalKinematics Case1 = VerticalKinematics(0.0,vi,vf,0.0);
+                        double result = Case1.getDisplacementNo("time");
                         cout <<"Your displacement is: "<< result <<endl;
 
                     }break;
@@ -677,8 +677,8 @@ int main(){
                         cout <<"Enter the time: " <<endl;
                         cin >> t;
 
-                        VerticalCinematic Case1 = VerticalCinematic(0.0,vi,0.0,t);
-                        double result = Case1.getFinalVelocityNoY();
+                        VerticalKinematics Case1 = VerticalKinematics(0.0,vi,0.0,t);
+                        double result = Case1.getFinalVelocityNo("displacement");
                         cout <<"Your final velocity is: "<< result <<endl;
 
                     }break;
@@ -693,8 +693,8 @@ int main(){
                         cout <<"Enter the time: " <<endl;
                         cin >> t;
 
-                        VerticalCinematic Case1 = VerticalCinematic(posy,0.0,0.0,t);
-                        double result = Case1.getFinalVelocityNoViVC();
+                        VerticalKinematics Case1 = VerticalKinematics(posy,0.0,0.0,t);
+                        double result = Case1.getFinalVelocityNo("initialVelocity");
                         cout <<"Your final velocity is: "<< result <<endl;
 
                     }break;
@@ -709,8 +709,8 @@ int main(){
                         cout <<"Enter displacement in Y: " <<endl;
                         cin >> posy;
 
-                        VerticalCinematic Case1 = VerticalCinematic(posy,vi,0.0,0.0);
-                        double result = Case1.getFinalVelocityNoTVC();
+                        VerticalKinematics Case1 = VerticalKinematics(posy,vi,0.0,0.0);
+                        double result = Case1.getFinalVelocityNo("time");
                         cout <<"Your final velocity is: "<< result <<endl;
 
                     }break;
@@ -731,8 +731,8 @@ int main(){
                         cout <<"Enter the time: " <<endl;
                         cin >> t;
 
-                        VerticalCinematic Case1 = VerticalCinematic(0.0,0.0,vf,t);
-                        double result = Case1.getInitialVelocityNoY();
+                        VerticalKinematics Case1 = VerticalKinematics(0.0,0.0,vf,t);
+                        double result = Case1.getInitialVelocityNo("displacement");
                         cout <<"Your initial velocity is: "<< result <<endl;
 
                     }break;
@@ -747,8 +747,8 @@ int main(){
                         cout <<"Enter the time: " <<endl;
                         cin >> t;
 
-                        VerticalCinematic Case1 = VerticalCinematic(posy,0.0,0.0,t);
-                        double result = Case1.getInitialVelocityNoVfVC();
+                        VerticalKinematics Case1 = VerticalKinematics(posy,0.0,0.0,t);
+                        double result = Case1.getInitialVelocityNo("finalVelocity");
                         cout <<"Your initial velocity is: "<< result <<endl;
 
                     }break;
@@ -763,8 +763,8 @@ int main(){
                         cout <<"Enter the displacement in Y: " <<endl;
                         cin >> posy;
 
-                        VerticalCinematic Case1 = VerticalCinematic(posy,0.0,vf,0.0);
-                        double result = Case1.getInitialVelocityNoTVC();
+                        VerticalKinematics Case1 = VerticalKinematics(posy,0.0,vf,0.0);
+                        double result = Case1.getInitialVelocityNo("time");
                         cout <<"Your initial velocity is: "<< result <<endl;
 
                     }break;
@@ -785,8 +785,8 @@ int main(){
                         cout <<"Enter the initial velocity:: " <<endl;
                         cin >> vi;
 
-                        VerticalCinematic Case1 = VerticalCinematic(0.0,vi,vf,0.0);
-                        double result = Case1.getTimeNoY();
+                        VerticalKinematics Case1 = VerticalKinematics(0.0,vi,vf,0.0);
+                        double result = Case1.getTimeNo("displacement");
                         cout <<"Your time is: "<< result <<endl;
 
                     }break;
@@ -801,8 +801,8 @@ int main(){
                         cout <<"Enter the initial velocity:: " <<endl;
                         cin >> vi;
 
-                        VerticalCinematic Case1 = VerticalCinematic(posy,vi,0.0,0.0);
-                        double result = Case1.getTimeNoVfVC();
+                        VerticalKinematics Case1 = VerticalKinematics(posy,vi,0.0,0.0);
+                        double result = Case1.getTimeNo("finalVelocity");
                         cout <<"Your time is: "<< result <<endl;
 
                     }break;
@@ -817,8 +817,8 @@ int main(){
                         cout <<"Enter the final velocity:: " <<endl;
                         cin >> vf;
 
-                        VerticalCinematic Case1 = VerticalCinematic(posy,0.0,vf,0.0);
-                        double result = Case1.getTimeNoViVC();
+                        VerticalKinematics Case1 = VerticalKinematics(posy,0.0,vf,0.0);
+                        double result = Case1.getTimeNo("initialVelocity");
                         cout <<"Your time is: "<< result <<endl;
 
                     }break;
@@ -862,8 +862,8 @@ int main(){
                 cin >> time;
 
                 MediumVAndA Case3 = MediumVAndA(posx1,posy1,posx2,posy2,time);
-                double velocityX = Case3.getMediumVelocityx1();
-                double velocityY = Case3.getMediumVelocityy1();
+                double velocityX = Case3.getMediumVelocity(1,2,'x');
+                double velocityY = Case3.getMediumVelocity(1,2,'y');
                 cout << "The medium velocity in the x axis is: "<<velocityX <<" and in the y axis is: "<<velocityY<<endl;
 
             }break;
@@ -907,12 +907,12 @@ int main(){
                 cin >> timeBtw;
 
                 MediumVAndA Case3 = MediumVAndA(posx1,posy1,posx2,posy2,time,posx3,posy3,posx4,posy4,time2,timeBtw);
-                double velocityX = Case3.getMediumVelocityx1();
-                double velocityY = Case3.getMediumVelocityy1();
-                double velocityX1 = Case3.getMediumVelocityx2();
-                double velocityY1 = Case3.getMediumVelocityy2();
-                double AccelerationX = Case3.getAccelerationX();
-                double AccelerationY = Case3.getAccelerationY();
+                double velocityX = Case3.getMediumVelocity(1,2,'x');
+                double velocityY = Case3.getMediumVelocity(1,2,'y');
+                double velocityX1 = Case3.getMediumVelocity(3,4,'x');
+                double velocityY1 = Case3.getMediumVelocity(3,4,'y');
+                double AccelerationX = Case3.getAcceleration('x');
+                double AccelerationY = Case3.getAcceleration('y');
 
                 cout << "The medium velocity in the x axis  of your 1st displacement is: "<<velocityX <<endl;
                 cout <<" And in the y axis is: "<<velocityY<<endl;
@@ -954,13 +954,13 @@ int main(){
 
         switch(lookFor1Check){
             case 1:{
-                double result = Case4.getPositionXInTime();
+                double result = Case4.getPositionInTime('x');
                 cout<<"Your position in X in time "<<Case4.getSpecificTime()<<" is: "<<result;
 
             }break;
 
             case 2:{
-                double result = Case4.getPositionYInTime();
+                double result = Case4.getPositionInTime('y');
                 cout<<"Your position in Y in time "<<Case4.getSpecificTime()<<" is: "<<result<<endl<<endl;
 
             }break;
@@ -972,25 +972,25 @@ int main(){
             }break;
 
             case 4:{
-                double result = Case4.getMaximumX();
+                double result = Case4.getMaximum('x');
                 cout<<"Your Maximum X Position is: "<<result <<endl;
 
             }break;
 
             case 5:{
-                double result = Case4.getTimeMaxX();
+                double result = Case4.getTimeMax('x');
                 cout<<"The time of the Maximum X Position is: "<<result <<endl;
 
             }break;
 
             case 6:{
-                double result = Case4.getMaximumY();
+                double result = Case4.getMaximum('x');
                 cout<<"Your Maximum Y Position is: "<<result <<endl;
 
             }break;
 
             case 7:{
-                double result = Case4.getTimeMaxY();
+                double result = Case4.getTimeMax('y');
                 cout<<"The time of the Maximum Y Position is: "<<result <<endl;
 
             }break;
@@ -1010,32 +1010,32 @@ int main(){
             cout<<"Class No. 1 Horizontal Kinematics"<<endl;
             cout<<" "<<endl;
 
-            HorizontalCinematic Case1 = HorizontalCinematic(20,0,40,2,20);
+            HorizontalKinematics Case1 = HorizontalKinematics(20,0,40,2,20);
 
             cout<<"Displacement: No Acceleration            "<<Case1.getDisplacementNoA()<<endl;
-            cout<<"Displacement: No Time                    "<<Case1.getDisplacementNoT()<<endl;
-            cout<<"Displacement: No Final Velocity          "<<Case1.getDisplacementNoVf()<<endl;
-            cout<<"Displacement: No Initial Velocity        "<<Case1.getDisplacementNoVi()<<endl;
+            cout<<"Displacement: No Time                    "<<Case1.getDisplacementNo("time")<<endl;
+            cout<<"Displacement: No Final Velocity          "<<Case1.getDisplacementNo("finalVelocity")<<endl;
+            cout<<"Displacement: No Initial Velocity        "<<Case1.getDisplacementNo("initialVelocity")<<endl;
 
             cout<<"Final Velocity: No Acceleration          "<<Case1.getFinalVelocityNoA()<<endl;
-            cout<<"Final Velocity: No Time                  "<<Case1.getFinalVelocityNoT()<<endl;
-            cout<<"Final Velocity: No Initial Velocity      "<<Case1.getFinalVelocityNoVi()<<endl;
-            cout<<"Final Velocity: No Displacement in X     "<<Case1.getFinalVelocityNoX()<<endl;
+            cout<<"Final Velocity: No Time                  "<<Case1.getFinalVelocityNo("time")<<endl;
+            cout<<"Final Velocity: No Initial Velocity      "<<Case1.getFinalVelocityNo("initialVelocity")<<endl;
+            cout<<"Final Velocity: No Displacement in X     "<<Case1.getFinalVelocityNo("displacement")<<endl;
 
             cout<<"Initial Velocity: No Acceleration        "<<Case1.getInitialVelocityNoA()<<endl;
-            cout<<"Initial Velocity: No Time                "<<Case1.getInitialVelocityNoT()<<endl;
-            cout<<"Initial Velocity: No Final Velocity      "<<Case1.getInitialVelocityNoVf()<<endl;
-            cout<<"Initial Velocity: No Displacement in X   "<<Case1.getInitialVelocityNoX()<<endl;
+            cout<<"Initial Velocity: No Time                "<<Case1.getInitialVelocityNo("time")<<endl;
+            cout<<"Initial Velocity: No Final Velocity      "<<Case1.getInitialVelocityNo("finalVelocity")<<endl;
+            cout<<"Initial Velocity: No Displacement in X   "<<Case1.getInitialVelocityNo("displacement")<<endl;
 
-            cout<<"Acceleration: No Time                    "<<Case1.getAccelerationNoT()<<endl;
-            cout<<"Acceleration: No Final Velocity          "<<Case1.getAccelerationNoVf()<<endl;
-            cout<<"Acceleration: No Initial Velocity        "<<Case1.getAccelerationNoVi()<<endl;
-            cout<<"Acceleration: No Displacement in X       "<<Case1.getAccelerationNoX()<<endl;
+            cout<<"Acceleration: No Time                    "<<Case1.getAccelerationNo("time")<<endl;
+            cout<<"Acceleration: No Final Velocity          "<<Case1.getAccelerationNo("finalVelocity")<<endl;
+            cout<<"Acceleration: No Initial Velocity        "<<Case1.getAccelerationNo("initialVelocity")<<endl;
+            cout<<"Acceleration: No Displacement in X       "<<Case1.getAccelerationNo("displacement")<<endl;
 
             cout<<"Time: No Acceleration                    "<<Case1.getTimeNoA()<<endl;
-            cout<<"Time: No Final Velocity                  "<<Case1.getTimeNoVf()<<endl;
-            cout<<"Time: No Initial Velocity                "<<Case1.getTimeNoVi()<<endl;
-            cout<<"Time: No Displacement in X               "<<Case1.getTimeNoX()<<endl;
+            cout<<"Time: No Final Velocity                  "<<Case1.getTimeNo("finalVelocity")<<endl;
+            cout<<"Time: No Initial Velocity                "<<Case1.getTimeNo("initialVelocity")<<endl;
+            cout<<"Time: No Displacement in X               "<<Case1.getTimeNo("displacement")<<endl;
             cout<<" "<<endl;
 
             //---------------------------------------------------------------------------------------------------------
@@ -1043,23 +1043,23 @@ int main(){
             cout<<"Class No. 2 Vertical Kinematics"<<endl;
             cout<<" "<<endl;
 
-            VerticalCinematic Case2 = VerticalCinematic(0,0,-50,5.09684);
+            VerticalKinematics Case2 = VerticalKinematics(0,0,-50,5.09684);
 
-            cout<<"Displacement: No Time                    "<<Case2.getDisplacementYNoT()<<endl;
-            cout<<"Displacement: No Final Velocity          "<<Case2.getDisplacementYNoVf()<<endl;
-            cout<<"Displacement: No Initial Velocity        "<<Case2.getDisplacementYNoVi()<<endl;
+            cout<<"Displacement: No Time                    "<<Case2.getDisplacementNo("time")<<endl;
+            cout<<"Displacement: No Final Velocity          "<<Case2.getDisplacementNo("finalVelocity")<<endl;
+            cout<<"Displacement: No Initial Velocity        "<<Case2.getDisplacementNo("initialVelocity")<<endl;
 
-            cout<<"Final Velocity: No Time                  "<<Case2.getFinalVelocityNoTVC() <<endl;
-            cout<<"Final Velocity: No Initial Velocity      "<<Case2.getFinalVelocityNoViVC()<<endl;
-            cout<<"Final Velocity: No Displacement in Y     "<<Case2.getFinalVelocityNoY()<<endl;
+            cout<<"Final Velocity: No Time                  "<<Case2.getFinalVelocityNo("time") <<endl;
+            cout<<"Final Velocity: No Initial Velocity      "<<Case2.getFinalVelocityNo("initialVelocity")<<endl;
+            cout<<"Final Velocity: No Displacement in Y     "<<Case2.getFinalVelocityNo("displacement")<<endl;
 
-            cout<<"Initial Velocity: No Time                "<<Case2.getInitialVelocityNoTVC()<<endl;
-            cout<<"Initial Velocity: No Final Velocity      "<<Case2.getInitialVelocityNoVfVC()<<endl;
-            cout<<"Initial Velocity: No Displacement in Y   "<<Case2.getInitialVelocityNoY()<<endl;
+            cout<<"Initial Velocity: No Time                "<<Case2.getInitialVelocityNo("time")<<endl;
+            cout<<"Initial Velocity: No Final Velocity      "<<Case2.getInitialVelocityNo("finalVelocity")<<endl;
+            cout<<"Initial Velocity: No Displacement in Y   "<<Case2.getInitialVelocityNo("displacement")<<endl;
 
-            cout<<"Time: No Final Velocity                  "<<Case2.getTimeNoVfVC()<<endl;
-            cout<<"Time: No Initial Velocity                "<<Case2.getTimeNoViVC()<<endl;
-            cout<<"Time: No Displacement in Y               "<<Case2.getTimeNoY()<<endl;
+            cout<<"Time: No Final Velocity                  "<<Case2.getTimeNo("finalVelocity")<<endl;
+            cout<<"Time: No Initial Velocity                "<<Case2.getTimeNo("initialVelocity")<<endl;
+            cout<<"Time: No Displacement in Y               "<<Case2.getTimeNo("displacement")<<endl;
             cout<<" "<<endl;
 
 
@@ -1070,12 +1070,12 @@ int main(){
 
             MediumVAndA Case3 = MediumVAndA(1.0,1.0,10.0,2.0,2.0,15.0,3.0,20.0,4.0,2.0,2.0);
 
-            cout<<"Medium Velocity in X of the 1st Position "<<Case3.getMediumVelocityx1()<<endl;
-            cout<<"Medium Velocity in Y of the 1st Position "<<Case3.getMediumVelocityy1()<<endl;
-            cout<<"Medium Velocity in X of the 2st Position "<<Case3.getMediumVelocityx2()<<endl;
-            cout<<"Medium Velocity in Y of the 2st Position "<<Case3.getMediumVelocityy2()<<endl;
-            cout<<"Medium Acceleration in X:                "<<Case3.getAccelerationX()<<endl;
-            cout<<"Medium Acceleration in Y:                "<<Case3.getAccelerationY()<<endl;
+            cout<<"Medium Velocity in X of the 1st Position "<<Case3.getMediumVelocity(1,2,'x')<<endl;
+            cout<<"Medium Velocity in Y of the 1st Position "<<Case3.getMediumVelocity(1,2,'y')<<endl;
+            cout<<"Medium Velocity in X of the 2st Position "<<Case3.getMediumVelocity(3,4,'x')<<endl;
+            cout<<"Medium Velocity in Y of the 2st Position "<<Case3.getMediumVelocity(3,4,'y')<<endl;
+            cout<<"Medium Acceleration in X:                "<<Case3.getAcceleration('x')<<endl;
+            cout<<"Medium Acceleration in Y:                "<<Case3.getAcceleration('y')<<endl;
             cout<<" "<<endl;
 
 
@@ -1086,13 +1086,13 @@ int main(){
 
             ParabolicShot Case4 = ParabolicShot(65.0,30,5);
 
-            cout<<"Position of the proyectile in X at a specific time:  "<<Case4.getPositionXInTime()<<endl;
-            cout<<"Position of the proyectile in Y at a specific time:  "<<Case4.getPositionYInTime()<<endl;
+            cout<<"Position of the proyectile in X at a specific time:  "<<Case4.getPositionInTime('x')<<endl;
+            cout<<"Position of the proyectile in Y at a specific time:  "<<Case4.getPositionInTime('y')<<endl;
             cout<<"Velocity of the proyectile in X at a specific time:  "<<Case4.getVelocityYinTime()<<endl;
-            cout<<"Range of the Parabole:                               "<<Case4.getMaximumX()<<endl;
-            cout<<"Time when the proyectile reach the range:            "<<Case4.getTimeMaxX()<<endl;
-            cout<<"Maximum height of the parabole:                      "<<Case4.getMaximumY()<<endl;
-            cout<<"Time when the proyectile reach the maximum height:   "<<Case4.getTimeMaxY()<<endl;
+            cout<<"Range of the Parabole:                               "<<Case4.getMaximum('x')<<endl;
+            cout<<"Time when the proyectile reach the range:            "<<Case4.getTimeMax('x')<<endl;
+            cout<<"Maximum height of the parabole:                      "<<Case4.getMaximum('y')<<endl;
+            cout<<"Time when the proyectile reach the maximum height:   "<<Case4.getTimeMax('y')<<endl;
             cout<<" "<<endl;
 
             

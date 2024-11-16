@@ -2,7 +2,7 @@
 
 Author: Rodrigo Alejandro Hurtado Cortés - A01713854
 Title: Class - MediumVAndA
-Date last modification: November 9th, 2024.
+Date last modification: November 14th, 2024.
 
 Description: The present class calculate the medium velocity between two positions and if two displacements
 are entered inside the constructor (four x positions, four y positions, 2 times between displacements and 
@@ -10,7 +10,10 @@ one intermediate time) it calculate the medium acceleration off both axis.
 
 */
 
+//Import section
 #include <iostream>
+#include "Position.h"
+
 using namespace std;
 
 #pragma once
@@ -19,24 +22,19 @@ class MediumVAndA{
     private:
 
         //Private Instance Variables
-        double positionx1;
-        double positiony1;
-        double positionx2;
-        double positiony2;
+
+        Position positions[4];
         double time1;
         double velocityx1;
         double velocityy1;
 
-        double positionx3;
-        double positiony3;
-        double positionx4;
-        double positiony4;
         double time2;
         double timeBtw;
         double velocityx2;
         double velocityy2;
 
-        double acceleration;
+        double accelerationX;
+        double accelerationY;
     
     //--------------------------------------------------------------------------------------//
 
@@ -45,80 +43,84 @@ class MediumVAndA{
 
         //Default constructor
         MediumVAndA(){
-            positionx1 = 0.0;
-            positiony1 = 0.0;
-            positionx2 = 0.0;
-            positiony2 = 0.0;
+            Position pos1 = Position();
+            positions[0] = pos1;
+            Position pos2 = Position();
+            positions[1] = pos2;
+            Position pos3 = Position();
+            positions[2] = pos3;
+            Position pos4 = Position();
+            positions[3] = pos4;
+
             time1 = 0.0;
             velocityx1 = 0.0;
             velocityy1 = 0.0;
-            positionx3 = 0.0;
-            positiony3 = 0.0;
-            positionx4 = 0.0;
-            positiony4 = 0.0;
             time2 = 0.0;
             timeBtw =0.0;
             velocityx2 = 0.0;
             velocityy2 = 0.0;
-            acceleration = 0.0;
+            accelerationX = 0.0;
+            accelerationY = 0.0;
         }
 
         //Constructor with parameters to obtain one medium velocity.
         MediumVAndA(double posx1, double posy1, double posx2, double posy2, double t1){
-            positionx1 = posx1;
-            positiony1 = posy1;
-            positionx2 = posx2;
-            positiony2 = posy2;
+            Position pos1 = Position(posx1,posy1);
+            positions[0] = pos1;
+            Position pos2 = Position(posx2,posy2);
+            positions[1] = pos2;
+            Position pos3 = Position();
+            positions[2] = pos3;
+            Position pos4 = Position();
+            positions[3] = pos4;
             time1 = t1;
             velocityx1 = 0.0;
             velocityy1 = 0.0;
-            positionx3 = 0.0;
-            positiony3 = 0.0;
-            positionx4 = 0.0;
-            positiony4 = 0.0;
             time2 = 0.0;
             timeBtw = 0.0;
             velocityx2 = 0.0;
             velocityy2 = 0.0;
-            acceleration = 0.0;
+            accelerationX = 0.0;
+            accelerationY = 0.0;
         }
 
         //Constructor with parameters to obtain two medium velocities and one acceleration.
         MediumVAndA(double posx1, double posy1, double posx2, double posy2, double t1,double posx3, double posy3, double posx4, double posy4, double t2, double tBtw){
-            positionx1 = posx1;
-            positiony1 = posy1;
-            positionx2 = posx2;
-            positiony2 = posy2;
+            Position pos1 = Position(posx1,posy1);
+            positions[0] = pos1;
+            Position pos2 = Position(posx2,posy2);
+            positions[1] = pos2;
+            Position pos3 = Position(posx3,posy3);
+            positions[2] = pos3;
+            Position pos4 = Position(posx4,posy4);
+            positions[3] = pos4;
             time1 = t1;
             velocityx1 = 0.0;
             velocityy1 = 0.0;
-            positionx3 = posx3;
-            positiony3 = posy3;
-            positionx4 = posx4;
-            positiony4 = posy4;
             time2 = t2;
             timeBtw = tBtw;
             velocityx2 = 0.0;
             velocityy2 = 0.0;
-            acceleration = 0.0;
+            accelerationX = 0.0;
+            accelerationY = 0.0;
         }
 
         //--------------------------------------------------------------------------------------//
         //Getter methods
         double getPositionx1(){
-            return positionx1;
+            return positions[0].getPosX();
         }
 
         double getPositiony1(){
-            return positiony1;
+            return positions[0].getPosY();
         }       
 
         double getPositionx2(){
-            return positionx2;
+            return positions[1].getPosX();
         }
 
         double getPositiony2(){
-            return positiony2;
+            return positions[1].getPosY();
         }
 
         double getTime1(){
@@ -134,19 +136,19 @@ class MediumVAndA{
         }
 
         double getPositionx3(){
-            return positionx3;
+            return positions[2].getPosX();
         }
 
         double getPositiony3(){
-            return positiony3;
+            return positions[2].getPosY();
         }
 
         double getPositionx4(){
-            return positionx4;
+            return positions[3].getPosX();
         }
 
         double getPositiony4(){
-            return positiony4;
+            return positions[3].getPosY();
         }
 
         double getTime2(){
@@ -165,27 +167,31 @@ class MediumVAndA{
             return velocityy2;
         }
 
-        double getAcceleration(){
-            return acceleration;
+        double getAccelerationX(){
+            return accelerationX;
+        }
+
+        double getAccelerationY(){
+            return accelerationY;
         }
 
         //--------------------------------------------------------------------------------------//
         //Setter Methods
 
         void setPositionx1(double posx1){
-            positionx1 = posx1;
+            positions[0].setPosX(posx1);
         }
 
         void setPositiony1(double posy1){
-            positiony1 = posy1;
+            positions[0].setPosY(posy1);
         }       
 
         void setPositionx2(double posx2){
-            positionx2 = posx2;
+            positions[1].setPosX(posx2);
         }
 
         void setPositiony2(double posy2){
-            positiony2 = posy2;
+            positions[1].setPosY(posy2);
         }
 
         void setTime1(double t1){
@@ -201,19 +207,19 @@ class MediumVAndA{
         }
 
         void setPositionx3(double posx3){
-            positionx3 = posx3;
+            positions[2].setPosX(posx3);
         }
 
         void setPositiony3(double posy3){
-            positiony3 = posy3;
+            positions[2].setPosY(posy3);
         }
 
         void setPositionx4(double posx4){
-            positionx4 = posx4;
+            positions[3].setPosX(posx4);
         }
 
         void setPositiony4(double posy4){
-            positiony4 = posy4;
+            positions[3].setPosY(posy4);
         }
 
         void setTime2(double t2){
@@ -232,8 +238,12 @@ class MediumVAndA{
             velocityy2 = vely2;
         }
 
-        void setAcceleration(double acc){
-            acceleration = acc;
+        void setAccelerationX(double acc){
+            accelerationX = acc;
+        }
+
+        void setAccelerationY(double acc){
+            accelerationY = acc;
         }
 
         //--------------------------------------------------------------------------------------//
@@ -241,37 +251,44 @@ class MediumVAndA{
         //Method to get Medium Velocity
 
         //1st Displacement methods
-        double getMediumVelocityx1(){
-            velocityx1 = (positionx2-positionx1)/time1;
-            return velocityx1;
+        
+        // getMediumVelocity(int pos1, int pos2, char axis) calculates the medium velocity based on
+        //the indexes entered representing the position desired and the axis regitered in char axis.
+        //Finally it is stored in its variable and returned to the user as a double.
+        double getMediumVelocity(int pos1, int pos2, char axis){
+            if (axis == 'x' && pos1 == 0 && pos2 == 1){
+                velocityx1 = (positions[pos2-1].getPosX()-positions[pos1-1].getPosX())/time1;
+                return velocityx1;
+            }
+            else if(axis == 'x'){
+                velocityx2 = (positions[pos2-1].getPosX()-positions[pos1-1].getPosX())/time2;
+                return velocityx2;
+            }
+            else if(axis == 'y' && pos1 == 0 && pos2 == 1){
+                velocityy1 = (positions[pos2-1].getPosY()-positions[pos1-1].getPosY())/time1;
+                return velocityy1;
+            }
+            else{
+                velocityy2 = (positions[pos2-1].getPosY()-positions[pos1-1].getPosY())/time2;
+                return velocityy2;
+            }
         }
 
-        double getMediumVelocityy1(){
-            velocityy1 = (positiony2-positiony1)/time1;
-            return velocityy1;
-        }
-
-        //2nd Displacement methods
-        double getMediumVelocityx2(){
-            velocityx2 = (positionx4-positionx3)/time2;
-            return velocityx2;
-        }
-
-        double getMediumVelocityy2(){
-            velocityy2 = (positiony4-positiony3)/time2;;
-            return velocityy2;
-        }
 
         //--------------------------------------------------------------------------------------//
-        //Method to get Acceleration
-        double getAccelerationX(){
-            acceleration = (velocityx2-velocityx1)/(time2+timeBtw+time1);
-            return acceleration;
+        //getAcceleration(char axis). If axis is 'x' it will save the acceleration in accelerationX and returned as a double, while if
+        //another character is entered then the y acceleration will be saved and returned as a double.
+        double getAcceleration(char axis){
+            if(axis == 'x'){
+                accelerationX = (velocityx2-velocityx1)/(time2+timeBtw+time1);
+                return accelerationX;
+            }
+            else{
+                accelerationY = (velocityy2-velocityy1)/(time2+timeBtw+time1);
+                return accelerationY;
+            }
         }
 
-        double getAccelerationY(){
-            acceleration = (velocityy2-velocityy1)/(time2+timeBtw+time1);
-            return acceleration;
-        }
+
 
 };

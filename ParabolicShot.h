@@ -2,11 +2,11 @@
 
 Author: Rodrigo Alejandro Hurtado Cortés - A01713854
 Title: Class - ParabolicShot
-Date last modification: November 9th, 2024.
+Date last modification: November 14th, 2024.
 
 Description: This class creates the Object ParabolicShot that based on the initial velocity,
 angle of inclination and specific time of the proyectile can obtain different values thanks
-to its methods.
+to its methods. 
 
 */
 
@@ -136,16 +136,21 @@ class ParabolicShot{
         //--------------------------------------------------------------------------------------//
         //Get Positions and Velocity at Specific Time
 
-        double getPositionXInTime(){
-            double positionX = (velocityx)*specificTime;
-            return positionX;
+        //getPositionInTime(char axis) uses a formula to get the position of the proyectile depending if the axis 'x' was
+        //entered, otherwise calculates the position in axis y. Afterwards returned to the user as a double.
+        double getPositionInTime(char axis){
+            if(axis == 'x'){
+                double positionX = (velocityx)*specificTime;
+                return positionX;
+            }
+            else{
+                double positionY = (velocityy)*specificTime + 0.5*gravity*pow(specificTime,2);
+                return positionY;
+            }
         }
 
-        double getPositionYInTime(){
-            double positionY = (velocityy)*specificTime + 0.5*gravity*pow(specificTime,2);
-            return positionY;
-        }
-
+        //getVelocityYinTime() calculates a specific velocity of the proyectile in the y axis depending on the 
+        //specific time entered in the constructor Afterwards returned to the user as a double.
         double getVelocityYinTime(){
             double velY = velocityy + gravity*specificTime;
             return velY;
@@ -153,28 +158,36 @@ class ParabolicShot{
 
         //--------------------------------------------------------------------------------------//
         //Get Maximum values of X and Y
-
-        double getMaximumX(){
-            maxX = (pow(initialVelocity,2) *sin(2*angle))/-gravity ;
-            return maxX;
-        }
-
-        double getMaximumY(){
-            maxY = pow(initialVelocity*sin(angle),2) / (2*-gravity);
-            return maxY;
+        
+        //getMaximum(char axis) uses a formula to calculate the maximum range of the parabola if the axis 'x' was
+        //entered, otherwise calculates the maximum height of the proyectile in axis y. Then it is stored in its
+        // variable and returned to the user as a double.
+        double getMaximum(char axis){
+            if(axis == 'x'){
+                maxX = (pow(initialVelocity,2) *sin(2*angle))/-gravity ;
+                return maxX;
+            }
+            else{
+                maxY = pow(initialVelocity*sin(angle),2) / (2*-gravity);
+                return maxY;
+            }
         }
 
         //--------------------------------------------------------------------------------------//
         //Get Times of Maximum Values of X and Y
 
-        double getTimeMaxX(){
-            timeMaxX= (2*initialVelocity*sin(angle))/(9.8);
-            return timeMaxX;
-        }
-        
-        double getTimeMaxY(){
-            timeMaxY = (initialVelocity*sin(angle)) / (9.8);
-            return timeMaxY;
+        //getTimeMax(cahr axis) uses a formula to get the time the proyectile reach the maximum range of the parabola if the 
+        //axis 'x' was entered, otherwise calculates the time the proyectile reaches the maximum height. Then it is 
+        // stored in its variable and returned to the user as a double.
+        double getTimeMax(char axis){
+            if(axis == 'x'){
+                timeMaxX= (2*initialVelocity*sin(angle))/(9.8);
+                return timeMaxX;
+            }
+            else{
+                timeMaxY = (initialVelocity*sin(angle)) / (9.8);
+                return timeMaxY;
+            }
         }
         
 
