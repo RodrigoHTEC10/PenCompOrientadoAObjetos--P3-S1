@@ -13,7 +13,7 @@ These classes and values they help the user obtain are:
 
 The UML diagram of the relationship between the proyect's classes can be appreciated below:
 
-<img src="https://github.com/user-attachments/assets/bb8e6bc0-5a53-4dc5-bf85-fd954e60e282" style="width:70%; height:auto;">
+<img src="https://github.com/user-attachments/assets/433b0c47-5c9d-4639-a39b-4c94dd63d521" style="width:70%; height:auto;">
 
 
 ### - **Kinematics** ("Kinematics.h")
@@ -23,8 +23,8 @@ Parent abstract class that constains all the attributes of Horizontal and Vertic
 
 The similarity between their respective formulas can be found in the images below.
 
-![Kinematics](https://github.com/user-attachments/assets/d7ab2d97-0763-4681-aaa6-6ada724b9249)
 
+![Kinematics](https://github.com/user-attachments/assets/20c6de33-a18b-4d86-a5c7-d6f5cffad1d0)
 
 
 ### - **Horizontal Kinematics** ("HorizontalCinematic.h")
@@ -37,7 +37,7 @@ Class that focuses on obtaining displacement in x and y, initial velocity, final
 The value that the user desires to obtain and the value the user does not have is specified by him/her in the menus.
 
 
-<img src="https://github.com/user-attachments/assets/47e30ae0-1691-4f9d-b4c2-0ba98602f151" style="width:30%; height:auto;">
+<img src="https://github.com/user-attachments/assets/badc04a0-79e2-4518-88fe-b20c4584927d" style="width:30%; height:auto;">
 
 
 ### - **Vertical Kinematics** ("VerticalCinematic.h")
@@ -46,7 +46,7 @@ The value that the user desires to obtain and the value the user does not have i
 This class uses inheritance from Kinematics.h keeping only its constructors due to the acceleration that will remain constant as the value of gravity acceleration 9.81, therefore entering it as a fixed parameter inside the constructor of Kinematics.
 
 
-<img src="https://github.com/user-attachments/assets/d4fa657c-0ab3-40f2-8bcd-31bc26bd2a1e" style="width:30%; height:auto;">
+<img src="https://github.com/user-attachments/assets/6985ae1f-962c-47b4-b005-4c6ea8c16b66" style="width:30%; height:auto;">
 
 
 ### - **Medium Velocity and Medium Acceleration** ("MediumVAndA.h")
@@ -59,8 +59,8 @@ Simple class where the user can choose to obtain the medium velocity of one disp
 
 Both the velocity and acceleration are divided into Y and X axis due to their posible vectorial influence.
 
-![MEDIUMA](https://github.com/user-attachments/assets/b65e78de-3790-4fe9-bb24-76833bed78a3)
 
+![MEDIUMA](https://github.com/user-attachments/assets/6c619fa2-fd80-4616-9c22-3f68d45d5961)
 
 
 ### - **Position** ("Position.h")
@@ -68,7 +68,8 @@ Both the velocity and acceleration are divided into Y and X axis due to their po
 Class responsible for holding position objects that contain an element in the "x" axis as well as the "y" axis; which are used to calculate Medium Velocity and Acceleration in their independent axis.
 
 
-<img src="https://github.com/user-attachments/assets/5f62f369-5844-437d-ac40-49d5ae6e8a5a" style="width:30%; height:auto;">
+<img src="https://github.com/user-attachments/assets/e36732ce-703e-4978-808a-031f7847f847" style="width:30%; height:auto;">
+
 
 
 ### - **Parabolic Shot** ("ParabolicShot.h")
@@ -78,7 +79,8 @@ Through the present class the user will enter the inivial velocity and angle at 
 <img src="https://physicsqanda.com/wp-content/uploads/2023/01/SmartSelect_20230119_111554_Samsung-Notes-1024x641.jpg" width=50% height=50%>
 
 
-![ParabolicShot](https://github.com/user-attachments/assets/eb187072-05cf-4a80-a78d-29f6ca140c2e)
+![ParabolicShot](https://github.com/user-attachments/assets/ac970a58-3331-4f74-aa61-8a884da3d033)
+
 
 
 ## ProyectPhysics.cpp
