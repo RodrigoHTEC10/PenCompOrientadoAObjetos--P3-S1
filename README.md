@@ -13,7 +13,7 @@ These classes and values they help the user obtain are:
 
 The UML diagram of the relationship between the proyect's classes can be appreciated below:
 
-<img src="https://github.com/user-attachments/assets/433b0c47-5c9d-4639-a39b-4c94dd63d521" style="width:70%; height:auto;">
+<img src="https://github.com/user-attachments/assets/80fb1830-9c53-4f48-8447-2de6af64a024" style="width:70%; height:auto;">
 
 
 ### - **Kinematics** ("Kinematics.h")
@@ -24,7 +24,8 @@ Parent abstract class that constains all the attributes of Horizontal and Vertic
 The similarity between their respective formulas can be found in the images below.
 
 
-![Kinematics](https://github.com/user-attachments/assets/20c6de33-a18b-4d86-a5c7-d6f5cffad1d0)
+![Kinematics](https://github.com/user-attachments/assets/85ca9ae0-3798-4a7b-bd8c-8c97792184ff)
+
 
 
 ### - **Horizontal Kinematics** ("HorizontalCinematic.h")
