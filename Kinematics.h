@@ -21,8 +21,8 @@ using namespace std;
 
 
 class Kinematics{
-    private: 
-    //Private Instance Variables
+    protected: 
+    //Protected Instance Variables
         double displacement;
         double initialVelocity;
         double finalVelocity;
