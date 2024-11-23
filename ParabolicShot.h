@@ -2,7 +2,7 @@
 
 Author: Rodrigo Alejandro Hurtado Cortés - A01713854
 Title: Class - ParabolicShot
-Date last modification: November 14th, 2024.
+Date last modification: November 22nd, 2024.
 
 Description: This class creates the Object ParabolicShot that based on the initial velocity,
 angle of inclination and specific time of the proyectile can obtain different values thanks
@@ -31,10 +31,6 @@ class ParabolicShot{
         double velocityy;
         double gravity;
         double specificTime;
-        double maxY;
-        double timeMaxY;
-        double maxX;
-        double timeMaxX;
 
         //--------------------------------------------------------------------------------------//
 
@@ -49,10 +45,6 @@ class ParabolicShot{
             velocityy = 0.0;
             gravity = -9.81;
             specificTime = 0.0;
-            maxY = 0.0;
-            timeMaxY = 0.0;
-            maxX = 0.0;
-            timeMaxX = 0.0;
         }
 
         //Constructor with parameters
@@ -63,10 +55,6 @@ class ParabolicShot{
             velocityy = iniV * sin(angle);
             gravity = -9.81;
             specificTime = st;
-            maxY = 0.0;
-            timeMaxY = 0.0;
-            maxX = 0.0;
-            timeMaxX = 0.0;
         }
 
         //--------------------------------------------------------------------------------------//
@@ -79,12 +67,15 @@ class ParabolicShot{
             return angle;
         }
 
-        double getVelocityX(){
-            return velocityx;
-        }
-
-        double getVelocityY(){
-            return velocityy;
+        //getVelocity(char axis) is a getter method which receives a character that refers to the axis the user
+        // is looking the velocity from. 
+        double getVelocity(char axis){
+            if(axis == 'x'){
+                return velocityx;
+            }
+            else{
+                return velocityy;
+            }
         }
 
         double getSpecificTime(){
@@ -103,32 +94,19 @@ class ParabolicShot{
             angle = ang;
         }
 
-        void setVelocityX(double velx){
-            velocityx = velx;
-        }
-
-        void setVelocityY(double vely){
-            velocityy = vely;
+        //setVelocity(char axis, double value) is a setter method which receives a character that refers to the axis the user
+        // is looking to modify and afterwards the value is assigned as the new content of the desired velocity.
+        void setVelocity(char axis, double value){
+            if(axis == 'x'){
+                velocityx = value;
+            }
+            else{
+                velocityy = value;
+            }
         }
 
         void setSpecificTime(double st){
             specificTime = st;
-        }
-
-        void setMaximumY(double mxY){
-            maxY = mxY;
-        }
-
-        void setTimeMaximunY(double tMxY){
-            timeMaxY = tMxY;
-        }
-
-        void setMaximumX(double mxX){
-            maxX = mxX;
-        }
-
-        void setTimeMaximumX(double tMxX){
-            timeMaxX = tMxX;
         }
 
         //--------------------------------------------------------------------------------------//
@@ -164,11 +142,11 @@ class ParabolicShot{
         // variable and returned to the user as a double.
         double getMaximum(char axis){
             if(axis == 'x'){
-                maxX = (pow(initialVelocity,2) *sin(2*angle))/-gravity ;
+                double maxX = (pow(initialVelocity,2) *sin(2*angle))/-gravity ;
                 return maxX;
             }
             else{
-                maxY = pow(initialVelocity*sin(angle),2) / (2*-gravity);
+                double maxY = pow(initialVelocity*sin(angle),2) / (2*-gravity);
                 return maxY;
             }
         }
@@ -181,11 +159,11 @@ class ParabolicShot{
         // stored in its variable and returned to the user as a double.
         double getTimeMax(char axis){
             if(axis == 'x'){
-                timeMaxX= (2*initialVelocity*sin(angle))/(9.8);
+                double timeMaxX= (2*initialVelocity*sin(angle))/(9.8);
                 return timeMaxX;
             }
             else{
-                timeMaxY = (initialVelocity*sin(angle)) / (9.8);
+                double timeMaxY = (initialVelocity*sin(angle)) / (9.8);
                 return timeMaxY;
             }
         }
